@@ -13,15 +13,15 @@ Read the book here: hwrot.riscvottawa.ca (planned)
 
 ## What this covers
 
-* What a root of trust is and why open silicon matters (OpenTitan and Pavona)
-* Building and running the Pavona Egret chip in the Verilator simulator
-* Secure boot: the ROM to ROM_EXT to owner-firmware chain and signature verification
-* Identity and keys: DICE, the OTP root secret, and key derivation
-* Attestation: identity certificates and verifying a certificate chain
-* Secure storage and lifecycle: scrambling and lifecycle-gated access
-* Post-quantum cryptography: the `acc` coprocessor and NIST known-answer tests
-* Provisioning and ownership transfer
-* Breaking it: forging, replay, fault injection, and the protocol red-team
+- What a root of trust is and why open silicon matters (OpenTitan and Pavona)
+- Building and running the Pavona Egret chip in the Verilator simulator
+- Secure boot: the ROM to ROM_EXT to owner-firmware chain and signature verification
+- Identity and keys: DICE, the OTP root secret, and key derivation
+- Attestation: identity certificates and verifying a certificate chain
+- Secure storage and lifecycle: scrambling and lifecycle-gated access
+- Post-quantum cryptography: the `acc` coprocessor and NIST known-answer tests
+- Provisioning and ownership transfer
+- Breaking it: forging, replay, fault injection, and the protocol red-team
 
 ## Building the book
 
@@ -37,6 +37,13 @@ with a static web server (build with `docs/` as the context).
 
 ## Resources
 
-* [OpenTitan](https://opentitan.org/)
-* [Pavona](https://pavona.org/)
-* [Verilator](https://www.veripool.org/verilator/)
+### Project tooling
+
+- [OpenTitan](https://opentitan.org/)
+- [Pavona](https://pavona.org/)
+- [Verilator](https://www.veripool.org/verilator/)
+
+### Reference material
+
+The literature review behind this project (secure boot, embedded trust anchors, security surveys, etc)
+is tracked in [Hayagriva](https://github.com/typst/hayagriva) format in [`references.yml`](./references.yml).

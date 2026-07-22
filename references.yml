@@ -1,0 +1,446 @@
+riscvpriv2026:
+  type: Report
+  title: "The RISC-V Instruction Set Manual, Volume II: Privileged Architecture"
+  edition: "20260120"
+  publisher: RISC-V International
+  date: 2026-01
+
+abera2016:
+  type: Article
+  title: "Invited - Things, Trouble, Trust: On Building Trust in IoT Systems"
+  author:
+    [
+      "Abera, Tigist",
+      "Asokan, N.",
+      "Davi, Lucas",
+      "Koushanfar, Farinaz",
+      "Paverd, Andrew",
+      "Sadeghi, Ahmad-Reza",
+      "Tsudik, Gene",
+    ]
+  serial-number:
+    doi: "10.1145/2897937.2905020"
+  date: 2016
+  parent:
+    type: Proceedings
+    title: "Proceedings of the 53rd Annual Design Automation Conference (DAC '16)"
+    publisher: ACM
+
+aerabi2020:
+  type: Article
+  title: "Design Space Exploration for Ultra-Low-Energy and Secure IoT MCUs"
+  author:
+    [
+      "Aerabi, Ehsan",
+      "Bohlouli, Milad",
+      "Ahmadi Livany, Mohammad Hasan",
+      "Fazeli, Mahdi",
+      "Papadimitriou, Athanasios",
+      "Hély, David",
+    ]
+  serial-number:
+    doi: "10.1145/3384446"
+  page-range: "19:1-19:34"
+  date: 2020
+  parent:
+    type: Periodical
+    title: "ACM Transactions on Embedded Computing Systems"
+    volume: 19
+    issue: 3
+
+asokan2018:
+  type: Article
+  title: "ASSURED: Architecture for Secure Software Update of Realistic Embedded Devices"
+  author: ["Asokan, N.", "Nyman, Thomas", "Rattanavipanon, Norrathep", "Sadeghi, Ahmad-Reza", "Tsudik, Gene"]
+  serial-number:
+    doi: "10.1109/TCAD.2018.2858422"
+  page-range: 2290-2300
+  date: 2018
+  parent:
+    type: Periodical
+    title: "IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems"
+    volume: 37
+    issue: 11
+
+aumasson2017:
+  type: Book
+  title: "Serious Cryptography: A Practical Introduction to Modern Encryption"
+  author: Aumasson, Jean-Philippe
+  publisher: No Starch Press
+  date: 2017
+
+brasser2015:
+  type: Article
+  title: "TyTAN: tiny trust anchor for tiny devices"
+  author:
+    ["Brasser, Ferdinand", "El Mahjoub, Brahim", "Sadeghi, Ahmad-Reza", "Wachsmann, Christian", "Koeberl, Patrick"]
+  serial-number:
+    doi: "10.1145/2744769.2744922"
+  page-range: "34:1-34:6"
+  date: 2015
+  parent:
+    type: Proceedings
+    title: "Proceedings of the 52nd Annual Design Automation Conference"
+    publisher: ACM
+
+bricker2013:
+  type: Article
+  title: "Unified Extensible Firmware Interface (UEFI) and Secure Boot: Promise and Pitfalls"
+  author: Bricker, George
+  page-range: 60-63
+  date: 2013-10
+  parent:
+    type: Periodical
+    title: "Journal of Computing Sciences in Colleges"
+    volume: 29
+    issue: 1
+
+burg2018:
+  type: Article
+  title: "Wireless Communication and Security Issues for Cyber-Physical Systems and the Internet-of-Things"
+  author: ["Burg, Andreas", "Chattopadhyay, Anupam", "Lam, Kwok-Yan"]
+  serial-number:
+    doi: "10.1109/JPROC.2017.2780172"
+  page-range: 38-60
+  date: 2018
+  parent:
+    type: Periodical
+    title: "Proceedings of the IEEE"
+    volume: 106
+    issue: 1
+
+dave2021:
+  type: Article
+  title: "CARE: Lightweight Attack Resilient Secure Boot Architecture with Onboard Recovery for RISC-V based SOC"
+  author: ["Dave, Avani", "Banerjee, Nilanjan", "Patel, Chintan"]
+  serial-number:
+    arxiv: "2101.06300"
+  date: 2021
+  parent:
+    type: Repository
+    title: CoRR
+
+diehl2017:
+  type: Article
+  title: "Comparison of hardware and software implementations of selected lightweight block ciphers"
+  author: ["Diehl, W.", "Farahmand, F.", "Yalla, P.", "Kaps, J.", "Gaj, K."]
+  serial-number:
+    doi: "10.23919/FPL.2017.8056808"
+  page-range: 1-4
+  date: 2017
+  parent:
+    type: Conference
+    title: "27th International Conference on Field Programmable Logic and Applications (FPL)"
+
+francillon2008:
+  type: Article
+  title: "Code injection attacks on harvard-architecture devices"
+  author: ["Francillon, Aurélien", "Castelluccia, Claude"]
+  serial-number:
+    doi: "10.1145/1455770.1455775"
+  page-range: 15-26
+  date: 2008
+  parent:
+    type: Proceedings
+    title: "ACM Conference on Computer and Communications Security (CCS)"
+    publisher: ACM
+
+frazelle2020:
+  type: Article
+  title: "Securing the Boot Process: The Hardware Root of Trust"
+  author: Frazelle, Jessie
+  serial-number:
+    doi: "10.1145/3380774.3382016"
+  page-range: 5-21
+  date: 2020-12
+  parent:
+    type: Periodical
+    title: Queue
+    volume: 17
+    issue: 6
+
+goodspeed2008:
+  type: Misc
+  title: "Stack Overflow Exploits for Wireless Sensor Networks Over 802.15.4"
+  author: Goodspeed, Travis
+  date: 2008-02
+  url: "http://osgug.ucaiug.org/utilisec/amisec/Meetings/20080822%20-%20Faceto-Face%20Consumers%20Energy%20(Jackson,%20MI)/Travis_Goodspeed_tidc08.pdf"
+
+google2019:
+  type: Blog
+  title: "OpenTitan - open sourcing transparent, trustworthy, and secure silicon"
+  author: Google Security Blog
+  url: "https://security.googleblog.com/2019/11/opentitan-open-sourcingtransparent.html"
+
+johnson2018:
+  type: Article
+  title: "Titan: enabling a transparent silicon root of trust for Cloud"
+  author: Johnson, Scott
+  organization: Google
+  date: 2018
+  parent:
+    type: Conference
+    title: "Hot Chips 30"
+  url: "https://old.hotchips.org/hc30/1conf/1.14_Google_Titan_GoogleFinalTitanHotChips2018.pdf"
+
+hahm2016:
+  type: Article
+  title: "Operating Systems for Low-End Devices in the Internet of Things: A Survey"
+  author: ["Hahm, O.", "Baccelli, E.", "Petersen, H.", "Tsiftes, N."]
+  serial-number:
+    doi: "10.1109/JIOT.2015.2505901"
+  page-range: 720-734
+  date: 2016
+  parent:
+    type: Periodical
+    title: "IEEE Internet of Things Journal"
+    volume: 3
+    issue: 5
+
+hajyahya2019:
+  type: Article
+  title: "Lightweight Secure-Boot Architecture for RISC-V System-on-Chip"
+  author: ["Haj-Yahya, Jawad", "Wong, Ming Ming", "Pudi, Vikramkumar", "Bhasin, Shivam", "Chattopadhyay, Anupam"]
+  serial-number:
+    doi: "10.1109/ISQED.2019.8697657"
+  page-range: 216-223
+  date: 2019
+  parent:
+    type: Conference
+    title: "20th International Symposium on Quality Electronic Design (ISQED)"
+    publisher: IEEE
+
+huang2020:
+  type: Blog
+  title: "Evaluating Precursor's Hardware Security"
+  author: Huang, Andrew
+  date: 2020-11
+  url: "https://www.bunniestudios.com/blog/?p=5979"
+
+kelly2018:
+  type: Report
+  title: "Project Cerberus Security Architecture Overview Specification"
+  author: Kelly, Bryan
+  date: 2018-04
+  url: "https://github.com/opencomputeproject/Project_Olympus/blob/master/Project_Cerberus/Project%20Cerberus%20Architecture%20Overview.pdf"
+
+khanam2020:
+  type: Article
+  title: "A Survey of Security Challenges, Attacks Taxonomy and Advanced Countermeasures in the Internet of Things"
+  author:
+    [
+      "Khanam, Shapla",
+      "Ahmedy, Ismail Bin",
+      "Idris, Mohd Yamani Idna Bin",
+      "Jaward, Mohamed Hisham",
+      "Sabri, Aznul Qalid Md",
+    ]
+  serial-number:
+    doi: "10.1109/ACCESS.2020.3037359"
+  page-range: 219709-219743
+  date: 2020
+  parent:
+    type: Periodical
+    title: "IEEE Access"
+    volume: 8
+
+koeberl2014:
+  type: Article
+  title: "TrustLite: a security architecture for tiny embedded devices"
+  author: ["Koeberl, Patrick", "Schulz, Steffen", "Sadeghi, Ahmad-Reza", "Varadharajan, Vijay"]
+  serial-number:
+    doi: "10.1145/2592798.2592824"
+  page-range: "10:1-10:14"
+  date: 2014
+  parent:
+    type: Proceedings
+    title: "Ninth Eurosys Conference"
+    publisher: ACM
+
+levy2017:
+  type: Article
+  title: "Multiprogramming a 64kB Computer Safely and Efficiently"
+  author:
+    [
+      "Levy, Amit",
+      "Campbell, Bradford",
+      "Ghena, Branden",
+      "Giffin, Daniel B.",
+      "Pannuto, Pat",
+      "Dutta, Prabal",
+      "Levis, Philip",
+    ]
+  serial-number:
+    doi: "10.1145/3132747.3132786"
+  page-range: 234-251
+  date: 2017
+  note: "the Tock OS paper"
+  parent:
+    type: Proceedings
+    title: "Proceedings of the 26th Symposium on Operating Systems Principles (SOSP '17)"
+    publisher: ACM
+  url: "https://github.com/tock/tock"
+
+maene2018:
+  type: Article
+  title: "Hardware-Based Trusted Computing Architectures for Isolation and Attestation"
+  author:
+    [
+      "Maene, Pieter",
+      "Götzfried, Johannes",
+      "de Clercq, Ruan",
+      "Müller, Tilo",
+      "Freiling, Felix C.",
+      "Verbauwhede, Ingrid",
+    ]
+  serial-number:
+    doi: "10.1109/TC.2017.2647955"
+  page-range: 361-374
+  date: 2018
+  parent:
+    type: Periodical
+    title: "IEEE Transactions on Computers"
+    volume: 67
+    issue: 3
+
+microsoft-secureboot:
+  type: Web
+  title: Secure boot
+  author: Microsoft
+  url: "https://docs.microsoft.com/en-us/windows-hardware/design/device-experiences/oem-secure-boot"
+
+obermaisser2007:
+  type: Article
+  title: "An integrated architecture for future car generations"
+  author: ["Obermaisser, Roman", "Peti, Philipp", "Tagliabo, Fulvio"]
+  serial-number:
+    doi: "10.1007/s11241-007-9015-4"
+  page-range: 101-133
+  date: 2007
+  parent:
+    type: Periodical
+    title: "Real-Time Systems"
+    volume: 36
+    issue: "1-2"
+
+ojo2018:
+  type: Article
+  title: "A Review of Low-End, Middle-End, and High-End IoT Devices"
+  author: ["Ojo, Mike Oluwatayo", "Giordano, Stefano", "Procissi, Gregorio", "Seitanidis, Ilias Nektarios"]
+  serial-number:
+    doi: "10.1109/ACCESS.2018.2879615"
+  page-range: 70528-70554
+  date: 2018
+  parent:
+    type: Periodical
+    title: "IEEE Access"
+    volume: 6
+
+vanoorschot2020:
+  type: Book
+  title: "Computer Security and the Internet: Tools and Jewels"
+  author: van Oorschot, Paul C.
+  publisher: Springer
+  date: 2020
+
+papp2015:
+  type: Article
+  title: "Embedded systems security: Threats, vulnerabilities, and attack taxonomy"
+  author: ["Papp, D.", "Ma, Z.", "Buttyan, L."]
+  serial-number:
+    doi: "10.1109/PST.2015.7232966"
+  page-range: 145-152
+  date: 2015
+  parent:
+    type: Conference
+    title: "13th Annual Conference on Privacy, Security and Trust (PST)"
+
+parno2010:
+  type: Article
+  title: "Bootstrapping Trust in Commodity Computers"
+  author: ["Parno, Bryan", "McCune, Jonathan M.", "Perrig, Adrian"]
+  serial-number:
+    doi: "10.1109/SP.2010.32"
+  page-range: 414-429
+  date: 2010
+  parent:
+    type: Proceedings
+    title: "31st IEEE Symposium on Security and Privacy"
+    publisher: IEEE Computer Society
+
+profentzas2019:
+  type: Article
+  title: "Performance of Secure Boot in Embedded Systems"
+  author: ["Profentzas, Christos", "Günes, Mirac", "Nikolakopoulos, Yiannis", "Landsiedel, Olaf", "Almgren, Magnus"]
+  serial-number:
+    doi: "10.1109/DCOSS.2019.00054"
+  page-range: 198-204
+  date: 2019
+  parent:
+    type: Conference
+    title: "15th International Conference on Distributed Computing in Sensor Systems (DCOSS)"
+    publisher: IEEE
+
+silva2019:
+  type: Article
+  title: "Operating Systems for Internet of Things Low-End Devices: Analysis and Benchmarking"
+  author: ["Silva, Miguel", "Cerdeira, David", "Pinto, Sandro", "Gomes, Tiago"]
+  serial-number:
+    doi: "10.1109/JIOT.2019.2939008"
+  page-range: 10375-10383
+  date: 2019
+  parent:
+    type: Periodical
+    title: "IEEE Internet of Things Journal"
+    volume: 6
+    issue: 6
+
+trappe2015:
+  type: Article
+  title: "Low-Energy Security: Limits and Opportunities in the Internet of Things"
+  author: ["Trappe, Wade", "Howard, Richard E.", "Moore, Robert S."]
+  serial-number:
+    doi: "10.1109/MSP.2015.7"
+  page-range: 14-21
+  date: 2015
+  parent:
+    type: Periodical
+    title: "IEEE Security & Privacy"
+    volume: 13
+    issue: 1
+
+tschofenig2019:
+  type: Article
+  title: "Cyberphysical Security for the Masses: A Survey of the Internet Protocol Suite for Internet of Things Security"
+  author: ["Tschofenig, Hannes", "Baccelli, Emmanuel"]
+  serial-number:
+    doi: "10.1109/MSEC.2019.2923973"
+  page-range: 47-57
+  date: 2019
+  parent:
+    type: Periodical
+    title: "IEEE Security & Privacy"
+    volume: 17
+    issue: 5
+
+uefi2020:
+  type: Report
+  title: "Unified Extensible Firmware Interface (UEFI) Specification"
+  author: UEFI Forum
+  edition: "2.8 B"
+  date: 2020-05
+  url: "https://uefi.org/"
+
+wolf2018:
+  type: Article
+  title: "Safety and Security in Cyber-Physical Systems and Internet-of-Things Systems"
+  author: ["Wolf, Marilyn", "Serpanos, Dimitrios N."]
+  serial-number:
+    doi: "10.1109/JPROC.2017.2781198"
+  page-range: 9-20
+  date: 2018
+  parent:
+    type: Periodical
+    title: "Proceedings of the IEEE"
+    volume: 106
+    issue: 1
