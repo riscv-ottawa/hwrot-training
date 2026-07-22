@@ -1,0 +1,20 @@
+[book]
+authors = ["Yusef Karim"]
+language = "en"
+src = "src"
+title = "RISC-V Ottawa: HWRoT"
+description = "Building an open-source hardware Root of Trust (HWRoT) on OpenTitan and Pavona"
+
+[rust]
+edition = "2024"
+
+[output.html]
+default-theme = "Ayu"
+preferred-dark-theme = "Ayu"
+mathjax-support = true
+git-repository-url = "https://github.com/riscv-ottawa/hwrot-training"
+# no-section-label = true
+
+[build]
+build-dir = "build"
+create-missing = false
