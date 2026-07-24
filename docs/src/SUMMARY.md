@@ -103,19 +103,17 @@
   - [Ownership transfer](./provisioning/ownership-transfer.md)
   - [Simulate it](./provisioning/simulate-it.md)-->
 
-# Breaking it
+# Egret as a secure co-processor
 
-* [Make it, then break it]()
-  - [Forging certificates]()
-  - [Replaying attestation]()
-  - [Fault injection]()
-  - [The protocol red-team]()
-  - [An intro to side-channel thinking]()
+* [Driving the root of trust from a host]()
+  - [The command channel]()
+  - [One command, end to end]()
+  - [Building a real host]()
+  - [Breaking the link]()
   - [Simulate it]()
-<!--* [Make it, then break it](./breaking-it/index.md)
-  - [Forging certificates](./breaking-it/forging-certificates.md)
-  - [Replaying attestation](./breaking-it/replay-attestation.md)
-  - [Fault injection](./breaking-it/fault-injection.md)
-  - [The protocol red-team](./breaking-it/protocol-red-team.md)
-  - [An intro to side-channel thinking](./breaking-it/side-channels.md)
-  - [Simulate it](./breaking-it/simulate-it.md)-->
+<!--* [Driving the root of trust from a host](./secure-coprocessor/index.md)
+  - [The command channel](./secure-coprocessor/the-command-channel.md)
+  - [One command, end to end](./secure-coprocessor/one-command-end-to-end.md)
+  - [Building a real host](./secure-coprocessor/a-real-host.md)
+  - [Breaking the link](./secure-coprocessor/breaking-the-link.md)
+  - [Simulate it](./secure-coprocessor/simulate-it.md)-->
