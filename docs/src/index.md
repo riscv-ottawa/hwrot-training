@@ -1,7 +1,7 @@
 <center>
 <h1>
     Hardware Root of Trust<br/>
-    <span style="color: #f17232">Exploring OpenTitan and Pavona</span><br/>
+    <span style="color: #d9a18d">Exploring OpenTitan and Pavona</span><br/>
 </h1>
 </center>
 
