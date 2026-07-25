@@ -36,8 +36,6 @@ The chapters for this part:
   reads the log line by line, and turns on the instrumentation.
 - [Reading the memory map](./memory-map.md) maps the chip so you
   can navigate and locate each block by address.
-- [Your first DV test](./first-dv-test.md) introduces design verification, the
-  adversarial testing that a passing boot does not give you.
 
 This part closes with [Simulate it](./simulate-it.md) (as does every part going forward), which is a small hands-on lab where you
 run the whole flow yourself and walk away with a reproducible green boot.

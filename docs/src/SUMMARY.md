@@ -3,23 +3,16 @@
 [Introduction](./index.md)
 [What is a Root of Trust?](./what-is-a-root-of-trust.md)
 [Why open silicon: OpenTitan and Pavona](./why-open-silicon.md)
+[Threats and trust boundaries](./threats-and-trust-boundaries.md)
 
 # The simulated chip
 
-* [Booting a chip on your laptop]()
-  - [Development environment]()
-  - [Building Egret in Verilator]()
-  - [Hello, World! on the simulated UART]()
-  - [Reading the memory map]()
-  - [Your first DV test]()
-  - [Simulate it]()
-<!--* [Booting a chip on your laptop](./simulated-chip/index.md)
+* [Booting a chip on your laptop](./simulated-chip/index.md)
   - [Development environment](./simulated-chip/dev-environment.md)
   - [Building Egret in Verilator](./simulated-chip/building-egret.md)
-  - [Hello, World! on the simulated UART](./simulated-chip/hello-world.md)
+  - [Hello, World!](./simulated-chip/hello-world.md)
   - [Reading the memory map](./simulated-chip/memory-map.md)
-  - [Your first DV test](./simulated-chip/first-dv-test.md)
-  - [Simulate it](./simulated-chip/simulate-it.md)-->
+  - [Simulate it](./simulated-chip/simulate-it.md)
 
 # Secure boot
 
