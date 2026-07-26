@@ -8,7 +8,7 @@ By the end of this part, you will have compiled the chip into a simulator, boote
 watched control pass from ROM to flash, printed `Hello World!` over a simulated
 UART, and traced those characters back to the exact hardware registers used.
 
-Everything runs in [Verilator](https://www.veripool.org/verilator/), which
+Everything runs in [Verilator][verilator], which
 magically translates synthesizable Verilog into a C++ program.
 This allows you to exercise things one clock edge at a time.
 But be warned, this fidelity has some costs, for example, the first build
@@ -39,3 +39,5 @@ The chapters for this part:
 
 Every command here is one you run against your own Pavona checkout, and you walk
 away with a reproducible green boot you can get back to from a clean tree.
+
+{{#include ../refs.md}}

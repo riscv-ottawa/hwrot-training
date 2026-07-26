@@ -7,7 +7,7 @@
 
 ## Overview
 
-This material is provided by [RISC-V Ottawa](https://riscvottawa.ca) as a
+This material is provided by [RISC-V Ottawa][riscvottawa] as a
 hands-on study of the hardware root of trust (HWRoT): a small, trusted core that
 everything else in a secure system depends on.
 
@@ -15,11 +15,11 @@ Rather than reading about it in the abstract, we take a real open-source root of
 
 The final goal is to get to the point where we can use a HWRoT in the same way a real product would. For this, we'll focus on the discrete secure element use case, where a separate host processor communicates to the HWRoT over SPI.
 
-The two open implementations we study are [OpenTitan](https://opentitan.org/), the open silicon
-root of trust from lowRISC, and [Pavona](https://pavona.org/), the newer,
+The two open implementations we study are [OpenTitan][opentitan], the open silicon
+root of trust from lowRISC, and [Pavona][pavona], the newer,
 certification-aligned design derived from it that adds a post-quantum crypto
 stack. Everything here runs in simulation using
-[Verilator](https://www.veripool.org/verilator/), so you need no special hardware,
+[Verilator][verilator], so you need no special hardware,
 only a machine with enough memory to build it.
 
 No prior hardware-security experience is assumed, though comfort with C, the
@@ -51,3 +51,5 @@ By the end you should be able to:
 - Utilize the chip from a host processor as a secure co-processor, and understand the attack surface between them and what defenses are provided
 
 The goal is to gain fundamental and transferable knowledge on what it takes to have trust rooted in hardware.
+
+{{#include ./refs.md}}

@@ -3,6 +3,11 @@ book
 *.csv*
 *.log*
 
+# mdbook-utils output (local link/refdef reports, not committed)
+broken_links.md
+duplicate_links.md
+links.md
+
 # Python crap
 
 # Byte-compiled / optimized / DLL files

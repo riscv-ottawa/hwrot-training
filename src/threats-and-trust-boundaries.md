@@ -5,9 +5,9 @@ relative to an attacker with particular capabilities, and to a boundary that
 separates who is in charge of what. Pavona documents both, and both are scoped to
 Egret (and Dragonfly), so they describe the exact chip we are about to boot:
 
-- The [lightweight threat model](https://docs.pavona.org/book/doc/security/threat_model/index.html)
+- The [lightweight threat model][pavona-threat-model]
   says who is attacking and with what.
-- The [logical security model](https://docs.pavona.org/book/doc/security/logical_security_model/index.html)
+- The [logical security model][pavona-logical-security]
   says who is in charge at each stage of the chip's life.
 
 One tells you who is trying to tip the final turtle over, the other who is
@@ -92,3 +92,5 @@ a given mechanism is defending against, defining attacker profiles demonstrates 
 and the entity model tells you whose key forms the base of trust at each step along the boot chain.
 When we trace from the initial ROM all the way up to owner firmware, or watch a device carry two separate identities, or step
 through a lifecycle transition, we must keep this model and its boundaries in mind.
+
+{{#include ./refs.md}}

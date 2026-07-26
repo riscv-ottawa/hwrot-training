@@ -109,7 +109,7 @@ waveform.
 > Neither GTKWave nor Surfer is in Pavona's container image.
 > If you want to view it, open the file on your host system,
 > in whichever waveform viewer you have installed on the host, e.g.,
-> GTKWave or [Surfer](https://surfer-project.org/).
+> GTKWave or [Surfer][surfer].
 
 > [!TIP]
 > The simulation also prints its own process ID at startup and there is a trick
@@ -124,3 +124,5 @@ screens, an understanding of which lines came from ROM and which from the flash
 application, and a clear sense of what the run did not check.
 
 This starting point is what the rest of the book builds on, let's keep going!
+
+{{#include ../refs.md}}

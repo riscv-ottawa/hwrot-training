@@ -32,6 +32,23 @@ markdown. Build with `mdbook build` (output goes to `book/`), or `mdbook serve`
 for a live-reloading local preview. A `Containerfile` is also provided that
 builds the book and serves it with a static web server.
 
+## Continuous integration
+
+Every pull request that changes the book runs the `book` workflow
+(`.github/workflows/book.yml`). It builds the book with mdBook, checks relative
+links with [lychee](https://github.com/lycheeverse/lychee) using `lychee.toml`,
+and checks that every reference-style link label resolves against `src/refs.md`
+with `scripts/book/check_refdefs.py`. The build fails on any error, including missing
+files referenced from `src/SUMMARY.md` (`create-missing = false`), broken
+relative links, dead image references, and undefined link labels. This check
+must pass before merge. Run it locally first:
+
+```
+mdbook build
+lychee --config lychee.toml 'src/**/*.md'
+python3 scripts/book/check_refdefs.py
+```
+
 ## Resources
 
 ### Project tooling
@@ -42,5 +59,5 @@ builds the book and serves it with a static web server.
 
 ### Reference material
 
-The literature review behind this project (secure boot, embedded trust anchors, security surveys, etc)
-is tracked in [Hayagriva](https://github.com/typst/hayagriva) format in [`references.yml`](./references.yml).
+Additional literature for this project (secure boot, embedded trust anchors,
+security surveys, etc.) is collected in the book's [References](./src/references.md) page.

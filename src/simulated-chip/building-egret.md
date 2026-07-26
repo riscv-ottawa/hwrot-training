@@ -52,7 +52,7 @@ that check in [the front matter](../what-is-a-root-of-trust.md): the digest it
 computes is forwarded to `keymgr`.
 The ROM image is not just the first code to run, it is an input to the chip's
 identity. See `rom_ctrl`'s
-[theory of operation](https://docs.pavona.org/book/hw/ip/rom_ctrl/doc/theory_of_operation.html)
+[theory of operation][rom-ctrl-theory]
 for the scrambling scheme, the 39-bit word format, and the digest-to-`keymgr`
 handoff.
 
@@ -100,6 +100,8 @@ is why building it produces the `sim_verilator` files above.
 > `sw/device/silicon_creator/rom/e2e` run in, and it is where the next part starts.
 > Everything in this part deliberately stays simple and on the test ROM.
 
-A just have a compiled `hello_world_sim_verilator` target in `bazel-bin/`, with its ELF,
-disassembly, map, and vmem image, and a Verilator model that is built and
-cached. The next chapter goes over actually running all of this.
+We now have a compiled `hello_world_sim_verilator` target in `bazel-bin/`, with its ELF,
+disassembly, a Verilator model, and more that is built and cached.
+The next chapter goes over actually running all of this.
+
+{{#include ../refs.md}}

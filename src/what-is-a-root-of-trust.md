@@ -1,6 +1,6 @@
 # What is a Root of Trust?
 
-There is an [old story about what holds up the world](https://en.wikipedia.org/wiki/Turtles_all_the_way_down). Some ancient cultures
+There is an [old story about what holds up the world][turtles]. Some ancient cultures
 pictured the Earth resting on the back of a giant turtle...which invited the
 obvious follow-up question: what holds up that turtle? Answer: another turtle. And under
 that one? Another turtle. It is **turtles all the way down**.
@@ -84,3 +84,5 @@ table to see how it connects back to the whole.
 The rest of the book is, in a sense, a slow walk through these table rows, one
 block at a time, first to understand what each one guarantees and then, in the
 final part, to integrate this within a larger system to find out what it does, and does not, do.
+
+{{#include ./refs.md}}
