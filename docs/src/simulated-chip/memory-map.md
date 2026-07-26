@@ -4,7 +4,7 @@ You have booted a chip. Now you need to be able to find your way around it. A
 microcontroller is, from software's point of view, a set of hardware blocks
 bolted onto a single address space, and to talk to any block you read from or
 write to its addresses. The memory map is the directory of that address space,
-and it is the reference you will reach for in every remaining Part of this book.
+and it is the reference you will reach for in every remaining part of this book.
 
 ## Where the map comes from
 
@@ -63,8 +63,8 @@ Ibex loads a program and its inputs, sets a bit, and cannot read that memory bac
 while ACC is running.
 
 Each row here is a later chapter. `otp_ctrl` and `lc_ctrl` are the Secure storage
-and lifecycle Part; `keymgr`, `kmac`, and `otp_ctrl` together are the Identity and
-keys Part; `acc` is the Post-quantum crypto Part. The memory map is where those
+and lifecycle part; `keymgr`, `kmac`, and `otp_ctrl` together are the Identity and
+keys part; `acc` is the Post-quantum crypto part. The memory map is where those
 chapters attach to the running chip, because every one of them is reached through
 an address in this table.
 
@@ -79,7 +79,7 @@ The map becomes real when you hold it against the software you built. Open the
 disassembly from two chapters ago:
 
 ```shell
-$ less bazel-bin/sw/device/examples/hello_world/hello_world_sim_verilator.dis
+less bazel-bin/sw/device/examples/hello_world/hello_world_sim_verilator.dis
 ```
 
 Follow how `hello_world.c`'s `LOG_INFO` calls turn into UART traffic. The logging
@@ -94,7 +94,7 @@ The trace records the address and data of every load and store the core executed
 so the same UART writes appear there as they actually happened, in order, with
 cycle counts attached. The disassembly tells you what the program intended; the
 trace tells you what the chip did. Reading both against one map is the habit this
-Part exists to build.
+part exists to build.
 
 ## What you should have at the end
 

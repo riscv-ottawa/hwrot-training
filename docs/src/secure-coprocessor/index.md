@@ -4,13 +4,13 @@ Primary reference: `pavona/hw/top_egret/doc/datasheet.md` (host-facing periphera
 and `pavona/hw/ip/spi_device/doc/theory_of_operation.md`.
 
 > Part intro (post-decision-date capstone): the payoff of the whole project.
-> Everything up to here studied Egret from the inside. This Part uses it from the
+> Everything up to here studied Egret from the inside. This part uses it from the
 > outside, the way a product does: a separate application processor (an OpenHW
 > cv32e40x host) treats Egret as a discrete secure element and offloads its
 > security operations to it over a bus.
 >
-> TODO before writing: this is the heaviest Part. Pace it as more than one ~3-hour
-> session. It replaces the earlier "Breaking it" Part; the single break-it
+> TODO before writing: this is the heaviest part. Pace it as more than one ~3-hour
+> session. It replaces the earlier "Breaking it" part; the single break-it
 > exercise is `breaking-the-link.md` (a bus-level replay/tamper on the
 > host<->Egret SPI link), which lands harder here because the reader has just
 > built the very link being attacked.

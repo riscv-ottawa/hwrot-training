@@ -7,4 +7,4 @@
 > and tamper, and state plainly what the raw channel does not protect on its own.
 > This is the demonstrative payoff, and unlike the old five-attack list it lives
 > on the integration's own wire, reusing the signing and freshness guarantees the
-> Attestation Part proved.
+> Attestation part proved.

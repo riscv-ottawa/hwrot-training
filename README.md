@@ -29,7 +29,7 @@ Read the book here: hwrot.riscvottawa.ca (planned)
 
 The website is built using [mdBook](https://github.com/rust-lang/mdBook). The
 book lives under [docs](./docs), kept separate from the repo root so the root
-can stay focused on [tutorials](./tutorials), the hands-on lab material.
+stays uncluttered.
 
 The folder of primary relevance is [docs/src](./docs/src), which holds the book
 content in markdown. From `docs/`, build with `mdbook build` (output goes to

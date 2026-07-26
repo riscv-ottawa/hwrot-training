@@ -34,8 +34,8 @@ The chapters for this part:
   from RTL through fusesoc to a compiled simulation binary, and the three memory images it boots from.
 - [Hello, World!](./hello-world.md) boots real software,
   reads the log line by line, and turns on the instrumentation.
-- [Reading the memory map](./memory-map.md) maps the chip so you
-  can navigate and locate each block by address.
+- [Reading the memory map](./memory-map.md) closes the part by mapping the chip
+  so you can navigate and locate each block by address.
 
-This part closes with [Simulate it](./simulate-it.md) (as does every part going forward), which is a small hands-on lab where you
-run the whole flow yourself and walk away with a reproducible green boot.
+Every command here is one you run against your own Pavona checkout, and you walk
+away with a reproducible green boot you can get back to from a clean tree.

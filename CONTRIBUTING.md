@@ -1,14 +1,14 @@
 # Contributing to hwrot-training
 
-Thanks for helping build this. This is a public mdBook and simulation tutorials that
-teaches the hardware root of trust by booting a real open-source design (Pavona
-Egret and OpenTitan) in Verilator and pulling it apart subsystem by subsystem.
+Thanks for helping build this. This is a public mdBook that teaches the hardware
+root of trust by booting a real open-source design (Pavona Egret and OpenTitan)
+in Verilator and pulling it apart subsystem by subsystem.
 
 ## Picking up work
 
 Work is tracked as GitHub issues. Assign yourself an issue before starting so two
-people do not duplicate. Each issue names the chapter or tutorial it touches and
-lists its acceptance criteria; those criteria are the definition of done.
+people do not duplicate. Each issue names the chapters it touches and lists its
+acceptance criteria; those criteria are the definition of done.
 
 ## The accuracy bar
 
@@ -31,7 +31,7 @@ If a claim cannot be backed by a source or a run, say so rather than filling the
 The book prose follows these rules, and so do commits, PRs, and reviews:
 
 - No AI filler.
-  - You're welcome to use AI to help you draft writeups and prove out tutorial material, but you MUST review and edit everything yourself before committing.
+  - You're welcome to use AI to help you draft writeups and prove out lab material, but you MUST review and edit everything yourself before committing.
 - Plain, direct language.
 - No hype; state facts and give justification where needed.
 
@@ -43,8 +43,10 @@ can show off. Pace a chapter to be roughly only a few hours that can be done in 
 
 `docs/` contains the mdBook.
 `docs/src/` is the content and `docs/src/SUMMARY.md` is the source of truth for structure and the table of contents.
-Each Part is a directory with an `index.md` whose final chapter is typically `simulate-it.md`.
-`tutorials/` at the repo root holds the hands-on lab each `simulate-it.md` sends readers to; see `tutorials/README.md` for that convention.
+Each part is a directory with an `index.md` and kebab-case chapter files.
+There is no mandatory final chapter: a part ends on whichever chapter best closes it,
+and whether it sets a closing challenge is up to whoever writes it.
+The hands-on material lives in the chapters themselves, with any helping material/scripts going under `scripts/`.
 `docs/build/` is generated output, never hand-edited.
 
 ## Build and verify
