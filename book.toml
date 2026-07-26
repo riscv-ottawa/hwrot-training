@@ -16,5 +16,4 @@ git-repository-url = "https://github.com/riscv-ottawa/hwrot-training"
 # no-section-label = true
 
 [build]
-build-dir = "build"
 create-missing = false

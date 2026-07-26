@@ -27,15 +27,12 @@ Read the book here: hwrot.riscvottawa.ca (planned)
 
 ## Building the book
 
-The website is built using [mdBook](https://github.com/rust-lang/mdBook). The
-book lives under [docs](./docs), kept separate from the repo root so the root
-stays uncluttered.
+The website is built using [mdBook](https://github.com/rust-lang/mdBook).
 
-The folder of primary relevance is [docs/src](./docs/src), which holds the book
-content in markdown. From `docs/`, build with `mdbook build` (output goes to
-`docs/build/`), or `mdbook serve` for a live-reloading local preview. A
-`Containerfile` is also provided in `docs/` that builds the book and serves it
-with a static web server (build with `docs/` as the context).
+The folder of primary relevance is [src](./src), which holds the book content in
+markdown. Build with `mdbook build` (output goes to `book/`), or `mdbook serve`
+for a live-reloading local preview. A `Containerfile` is also provided that
+builds the book and serves it with a static web server.
 
 ## Resources
 

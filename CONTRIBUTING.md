@@ -41,30 +41,30 @@ can show off. Pace a chapter to be roughly only a few hours that can be done in 
 
 ## Layout you need to know
 
-`docs/` contains the mdBook.
-`docs/src/` is the content and `docs/src/SUMMARY.md` is the source of truth for structure and the table of contents.
+The mdBook lives at the repo root.
+`src/` is the content and `src/SUMMARY.md` is the source of truth for structure and the table of contents.
 Each part is a directory with an `index.md` and kebab-case chapter files.
 There is no mandatory final chapter: a part ends on whichever chapter best closes it,
 and whether it sets a closing challenge is up to whoever writes it.
 The hands-on material lives in the chapters themselves, with any helping material/scripts going under `scripts/`.
-`docs/build/` is generated output, never hand-edited.
+`book/` is generated output, never hand-edited.
 
 ## Build and verify
 
-Build the book from `docs/`:
+Build the book from the repo root:
 
 ```
-mdbook build      # output to docs/build/
+mdbook build      # output to book/
 mdbook serve      # live preview
 ```
 
-`docs/Containerfile` does the same in a container (Ubuntu 24.04 + mdBook v0.5.2):
+`Containerfile` does the same in a container (Ubuntu 24.04 + mdBook v0.5.2):
 
 ```
-podman build -f docs/Containerfile docs/
+podman build .
 ```
 
-Before opening a PR, confirm `mdbook build` succeeds and that `docs/src/SUMMARY.md`
+Before opening a PR, confirm `mdbook build` succeeds and that `src/SUMMARY.md`
 matches the chapter map. For the Pavona simulation toolchain, do not write build
 commands from memory; The upstream `pavona/doc/getting_started/` is the source of truth.
 
