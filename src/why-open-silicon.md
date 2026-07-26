@@ -9,11 +9,11 @@ When the RTL, the boot ROM, and the verification environment are all public, the
 security argument can be checked by anyone who cares to, and the design earns
 trust by being examined rather than by being hidden.
 
-[OpenTitan](https://opentitan.org/), from the lowRISC project, is where that
+[OpenTitan][opentitan], from the lowRISC project, is where that
 changed. It is the original open-source silicon root of trust, open all the way
 down to the chip design itself, and it runs on RISC-V. It is also not a paper
 design. As of March 2026, OpenTitan silicon fabricated by Nuvoton
-[ships in commercially available Chromebooks](https://lowrisc.org/news/opentitan-ships-in-chromebooks-first-production-deployment/),
+[ships in commercially available Chromebooks][opentitan-chromebooks],
 the project's first production deployment. Its `top_earlgrey`
 configuration is the most thoroughly documented, and its `silicon_creator` C
 code is the reference implementation of secure boot.
@@ -26,7 +26,7 @@ proprietary secure element, and you certainly cannot watch its key manager
 change state. In simulation, on open RTL, you can watch any signal in the
 design.
 
-[Pavona](https://pavona.org/) is the newer design, built in part from OpenTitan
+[Pavona][pavona] is the newer design, built in part from OpenTitan
 and steered by a foundation hosted by GlobalPlatform with
 certification readiness as an explicit goal. It keeps OpenTitan's architecture
 and much of its software, and adds the `acc` asymmetric cryptography
@@ -44,3 +44,5 @@ more thoroughly written up, and the so-called `silicon_creator` code it has is t
 secure-boot implementation. The two are close enough that most of what you learn
 about one transfers to the other, and this book says so explicitly each time it
 steps from one to another.
+
+{{#include ./refs.md}}

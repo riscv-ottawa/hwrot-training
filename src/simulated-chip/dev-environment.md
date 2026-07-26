@@ -6,15 +6,15 @@ project's because it spans two worlds at once, hardware and software...and the
 same repository builds both. Understanding what each tool does makes the setup
 feel less like wizardry and more like a normal down-to-earth toolbox.
 
-At the center is [Bazel](https://bazel.build/), invoked through a wrapper script
+At the center is [Bazel][bazel], invoked through a wrapper script
 called `bazelisk.sh` that fetches the exact Bazel version the project expects.
 Bazel is the single entry point for almost everything. It builds the RISC-V
 software that runs on the chip, and it also drives the hardware build. When you
 ask Bazel for a `sim_verilator` target, it runs
-[fusesoc](https://github.com/olofk/fusesoc) to gather the RTL, invokes Verilator
+[fusesoc][fusesoc] to gather the RTL, invokes Verilator
 to generate and compile the C++ model, builds the device software, and finally
 launches
-[opentitantool](https://github.com/lowRISC/opentitan/tree/master/sw/host/opentitantool)
+[opentitantool][opentitantool]
 to load the memory images and stream the chip's output back to your terminal.
 You rarely call Verilator, fusesoc, or the opentitantool yourself; Bazel orchestrates
 them, which is why nearly every command in this part starts with `./bazelisk.sh`.
@@ -38,7 +38,7 @@ project-specific virtual environment, installed from `python-requirements.txt`
 with version/hash pinning, so its dependencies never collide with any system Python packages in the container.
 
 There are two options to get your dev environment set up. Pavona's
-[getting started guide](https://docs.pavona.org/book/doc/getting_started/index.html)
+[getting started guide][pavona-getting-started]
 documents a native one running on a Ubuntu host. It works well
 if you already run a supported Ubuntu version. The container path below is the simpler
 option and works more broadly, thus it is what the rest of this book assumes.
@@ -56,7 +56,7 @@ default Bazel caches under `~/.cache/bazel`, and inside the container that
 resolves to `/home/dev/.cache/bazel`, which is not part of the bind mount
 above. See the command below for instructions on how to mount this.
 
-We use [Podman](https://podman.io/) here, but every invocation below is
+We use [Podman][podman] here, but every invocation below is
 identical under Docker (substitute `docker` for `podman`, drop the `--userns`
 and `--user` flags explained below since Docker does not need them, and note
 that Pavona's own instructions run `docker build` under `sudo`).
@@ -105,3 +105,5 @@ cd ~/src && ./bazelisk.sh
 With no arguments it fetches the pinned Bazel release and prints Bazel's usage
 message. This is enough proof that the wrapper works and the workspace is
 is good to go. Onwards!
+
+{{#include ../refs.md}}

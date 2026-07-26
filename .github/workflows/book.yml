@@ -1,0 +1,52 @@
+name: book
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'book.toml'
+      - 'theme/**'
+      - 'Containerfile'
+      - 'lychee.toml'
+      - '.github/workflows/book.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'scripts/**'
+      - 'book.toml'
+      - 'theme/**'
+      - 'Containerfile'
+      - 'lychee.toml'
+      - '.github/workflows/book.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install mdBook v0.5.2
+        run: |
+          set -euo pipefail
+          v=v0.5.2
+          curl -sSL "https://github.com/rust-lang/mdBook/releases/download/${v}/mdbook-${v}-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz --directory /usr/local/bin
+          mdbook --version
+
+      - name: Build book
+        run: mdbook build
+
+      - name: Check relative links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          version: "0.24.2"
+          args: --config lychee.toml 'src/**/*.md'
+          fail: true
+
+      - name: Check reference-style link labels
+        run: python3 scripts/book/check_refdefs.py

@@ -1,0 +1,8 @@
+# lychee link-checker config for the mdBook source.
+# Run locally with: lychee --config lychee.toml 'src/**/*.md'
+# SUMMARY.md is validated by `mdbook build` (create-missing = false),
+# so it is excluded here to avoid flagging mdBook draft chapters ([Title]()).
+offline = true
+no_progress = true
+root_dir = "src"
+exclude_path = ["src/SUMMARY.md"]
