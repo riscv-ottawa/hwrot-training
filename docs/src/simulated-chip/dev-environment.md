@@ -51,12 +51,13 @@ host and is bind-mounted in, so your edits, your Bazel cache, and your git
 history live in one place and outlive any container you recycle.
 
 We use [Podman](https://podman.io/) here, but every invocation below is
-identical under Docker (substitute `docker` for `podman`, and note that Pavona's
-own instructions run `docker build` under `sudo`).
+identical under Docker (substitute `docker` for `podman`, drop the `--userns`
+and `--user` flags explained below since Docker does not need them, and note
+that Pavona's own instructions run `docker build` under `sudo`).
 
 Build the image once from the top of your Pavona checkout:
 
-```shell
+```sh
 podman build -t pavona -f util/container/Dockerfile .
 ```
 
@@ -65,8 +66,10 @@ inside the container. The `DEV_UID` and `DEV_GID` variables give the container's
 `dev` user your own user and group IDs, so files it creates land back on the
 host owned by you rather than by root:
 
-```shell
-podman run -t -i \
+```sh
+podman run -it \
+  --userns=keep-id \
+  --user root:root \
   -v $(pwd):/home/dev/src \
   --env DEV_UID=$(id -u) --env DEV_GID=$(id -g) \
   pavona:latest \
@@ -74,15 +77,19 @@ podman run -t -i \
 ```
 
 > [!NOTE]
-> One caveat specific to rootless Podman: the bind-mounted checkout has to be
-> readable and writable by your user, and the `DEV_UID` and `DEV_GID` mapping
-> above is what keeps ownership consistent.
+> Rootless Podman gives every container its own private user namespace, so by
+> default a process the container thinks is UID 1000 is not the same as UID
+> 1000 on your host, it is remapped. Using `--userns=keep-id`
+> fixes that by mapping your real host UID into the container as itself, but
+> it also makes the container start as that UID instead of root, which breaks
+> the `DEV_UID`/`DEV_GID` remap the entrypoint script needs to run as root.
+> `--user root:root` puts root back for the entrypoint.
 
 ## Ready
 
 You can now open a shell inside the container and run the Bazel wrapper:
 
-```shell
+```sh
 cd ~/src && ./bazelisk.sh
 ```
 

@@ -68,7 +68,7 @@ chip you are booting is deliberately in its most open configuration for now.
 The example is at `sw/device/examples/hello_world/` in the Pavona repo, three files: the `BUILD`
 target, a `README.md`, and `hello_world.c`. A single Bazel invocation compiles it:
 
-```shell
+```sh
 ./bazelisk.sh build sw/device/examples/hello_world:hello_world
 ```
 
@@ -77,7 +77,7 @@ target, a `README.md`, and `hello_world.c`. A single Bazel invocation compiles i
 
 The build produces a set of files under `bazel-bin/sw/device/examples/hello_world/`, each named for its execution environment:
 
-```shell
+```sh
 hello_world_sim_verilator.elf      # the linked RISC-V binary
 hello_world_sim_verilator.dis      # its disassembly, human-readable
 hello_world_sim_verilator.map      # the linker map

@@ -4,7 +4,7 @@ We've prepared everything needed.
 One command can now be used to boot the simulated chip/model, run your software,
 and print things back over a simulated serial port.
 
-```shell
+```sh
 ./bazelisk.sh test sw/device/examples/hello_world:hello_world_sim_verilator --test_output=streamed
 ```
 
@@ -65,7 +65,7 @@ a test whose inputs have not changed. That is usually what you want, but when yo
 are iterating on the chip or the software and need to force a real run, disable
 it:
 
-```shell
+```sh
 ./bazelisk.sh test sw/device/examples/hello_world:hello_world_sim_verilator \
     --test_output=streamed --cache_test_results=false
 ```
@@ -83,7 +83,7 @@ stores, the address it touched and the data it moved. Wow!
 
 The log file is a bit buried, so to find it...use `find`:
 
-```shell
+```sh
 find ~/.cache/bazel -name "trace_core_00000000.log"
 ```
 
@@ -98,7 +98,7 @@ waveform.
 > slower than without tracing, so the test's timeout value needs to be raised proportionally
 > or Bazel may kill the test before it finishes.
 
-```shell
+```sh
 ./bazelisk.sh test sw/device/examples/hello_world:hello_world_sim_verilator \
     --test_output=streamed \
     --test_timeout=1000 \
