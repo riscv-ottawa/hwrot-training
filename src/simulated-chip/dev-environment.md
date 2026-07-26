@@ -30,8 +30,9 @@ In the container we're going to use, Verilator is built from source rather
 than installed from a package, because distribution packages tend to lag badly
 behind. Pavona pins the version in `third_party/verilator/extensions.bzl` (`5.046`
 at the time of writing) and Bazel compiles it for you the first time you build a
-simulation target. That compile is the bulk of the first ten-minute wait, but it
-only happens once. Second, the Python tooling (topgen, regtool, dvsim, and the
+simulation target. That compile is the bulk of the first ten-minute wait, and it
+only happens once *as long as Bazel's cache survives*, which is why the
+container instructions below bind-mount a directory for it. Second, the Python tooling (topgen, regtool, dvsim, and the
 scripts that generate register files and documentation) runs in a
 project-specific virtual environment, installed from `python-requirements.txt`
 with version/hash pinning, so its dependencies never collide with any system Python packages in the container.
@@ -47,8 +48,13 @@ option and works more broadly, thus it is what the rest of this book assumes.
 Pavona provides a container definition at `util/container/Dockerfile`, built on
 Ubuntu 22.04, that installs every system dependency the getting started guide
 lists. Your locally checked out version of the Pavona repo stays on the
-host and is bind-mounted in, so your edits, your Bazel cache, and your git
-history live in one place and outlive any container you recycle.
+host and is bind-mounted in, so your edits and your git history live in one
+place and outlive any container you recycle.
+
+Bazel's build cache does not, unless you mount a second directory for it. By
+default Bazel caches under `~/.cache/bazel`, and inside the container that
+resolves to `/home/dev/.cache/bazel`, which is not part of the bind mount
+above. See the command below for instructions on how to mount this.
 
 We use [Podman](https://podman.io/) here, but every invocation below is
 identical under Docker (substitute `docker` for `podman`, drop the `--userns`
@@ -62,15 +68,18 @@ podman build -t pavona -f util/container/Dockerfile .
 ```
 
 Then start an interactive shell in it, mapping your checkout to `/home/dev/src`
-inside the container. The `DEV_UID` and `DEV_GID` variables give the container's
+and a host directory to `/home/dev/.cache` so Bazel's cache survives a
+recycled container. The `DEV_UID` and `DEV_GID` variables give the container's
 `dev` user your own user and group IDs, so files it creates land back on the
 host owned by you rather than by root:
 
 ```sh
+mkdir -p ~/.cache/pavona-bazel
 podman run -it \
   --userns=keep-id \
   --user root:root \
   -v $(pwd):/home/dev/src \
+  -v ~/.cache/pavona-bazel:/home/dev/.cache \
   --env DEV_UID=$(id -u) --env DEV_GID=$(id -g) \
   pavona:latest \
   bash
