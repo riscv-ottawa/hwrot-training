@@ -1,17 +1,15 @@
 # RISC-V Ottawa: Hardware Root of Trust
 
-A hands-on study of what a hardware root of trust actually is, built entirely in
-simulation on your own machine. We take a real open-source root of trust
-(OpenTitan, and the newer certification-aligned Pavona), boot it in Verilator,
-decompose it subsystem by subsystem until the whole trust chain is understood end
-to end, then put it to work the way a product does, as a discrete secure element
-that a separate host processor drives, and break the link between them to find out
-what it can and cannot guarantee.
+This material is provided by [RISC-V Ottawa](https://riscvottawa.ca) as a hands-on study of the hardware root of trust (HWRoT): a small, trusted core that everything else in a secure system depends on.
+
+Rather than reading about it in the abstract, we take a real open-source root of trust implementation, boot it in a simulator on a laptop, and pull it apart subsystem by subsystem until the whole chain of trust is understood end to end.
+
+The final goal is to get to the point where we can use a HWRoT in the same way a real product would. For this, we'll focus on the discrete secure element use case, where a separate host processor communicates to the HWRoT over SPI.
 
 No prior hardware-security experience is assumed, though comfort with C, the
 command line, and basic cryptography will help.
 
-Read the book here: hwrot.riscvottawa.ca (planned)
+Read the book here: [hwrot.riscvottawa.ca](https://hwrot.riscvottawa.ca/)
 
 ## What this covers
 
