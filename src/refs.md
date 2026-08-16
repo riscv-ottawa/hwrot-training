@@ -9,20 +9,27 @@
 [pavona-getting-started]: https://docs.pavona.org/book/doc/getting_started/index.html
 [pavona-hw-gen]: https://docs.pavona.org/book/doc/getting_started/intro_hardware.html#the-top-generation-flow
 [pavona-logical-security]: https://docs.pavona.org/book/doc/security/logical_security_model/index.html
+[pavona-manifest]: https://docs.pavona.org/book/sw/device/silicon_creator/rom_ext/doc/manifest.html
 [pavona-secure-boot]: https://docs.pavona.org/book/doc/security/specs/secure_boot/index.html
+[pavona-sigverify]: https://docs.pavona.org/book/sw/device/silicon_creator/rom/doc/sigverify.html
 [pavona-threat-model]: https://docs.pavona.org/book/doc/security/threat_model/index.html
 [podman]: https://podman.io/
 [riscvottawa]: https://riscvottawa.ca
 [rom-ctrl-theory]: https://docs.pavona.org/book/hw/ip/rom_ctrl/doc/theory_of_operation.html
+[smepmp]: https://docs.riscv.org/reference/isa/v20260120/priv/smepmp.html
+[mseccfg]: https://docs.riscv.org/reference/isa/v20260120/priv/machine.html#norm:mseccfg_enc_img
+[xmodem]: https://everything.explained.today/XMODEM/
 [mac]: https://en.wikipedia.org/wiki/Message_authentication_code
 [fsm]: https://en.wikipedia.org/wiki/Finite-state_machine
 [surfer]: https://surfer-project.org/
 [turtles]: https://en.wikipedia.org/wiki/Turtles_all_the_way_down
 [verilator]: https://www.veripool.org/verilator/
+[baochip]: https://www.baochip.com/
 
 [abera2016]: https://doi.org/10.1145/2897937.2905020
 [aerabi2020]: https://doi.org/10.1145/3384446
 [asokan2018]: https://doi.org/10.1109/TCAD.2018.2858422
+[barel2006]: https://doi.org/10.1109/JPROC.2005.862424
 [brasser2015]: https://doi.org/10.1145/2744769.2744922
 [burg2018]: https://doi.org/10.1109/JPROC.2017.2780172
 [dave2021]: https://arxiv.org/abs/2101.06300

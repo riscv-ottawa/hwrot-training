@@ -8,6 +8,8 @@ Asokan, N., Nyman, Thomas, Rattanavipanon, Norrathep, Sadeghi, Ahmad-Reza, and T
 
 Aumasson, Jean-Philippe (2017). "Serious Cryptography: A Practical Introduction to Modern Encryption". *No Starch Press*.
 
+Bar-El, H., Choukri, H., Naccache, D., Tunstall, M., and Whelan, C. (2006). ["The Sorcerer's Apprentice Guide to Fault Attacks"][barel2006]. *Proceedings of the IEEE*, vol. 94, no. 2. pp. 370-382.
+
 Brasser, Ferdinand, El Mahjoub, Brahim, Sadeghi, Ahmad-Reza, Wachsmann, Christian, and Koeberl, Patrick (2015). ["TyTAN: tiny trust anchor for tiny devices"][brasser2015]. *Proceedings of the 52nd Annual Design Automation Conference*, ACM. pp. 34:1-34:6.
 
 Bricker, George (2013). "Unified Extensible Firmware Interface (UEFI) and Secure Boot: Promise and Pitfalls". *Journal of Computing Sciences in Colleges*, vol. 29, no. 1. pp. 60-63.

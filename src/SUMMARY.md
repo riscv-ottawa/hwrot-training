@@ -15,16 +15,12 @@
 
 # Secure boot
 
-* [How a chip trusts its own code]()
-  - [The boot chain: ROM to ROM_EXT to owner]()
-  - [Signature verification]()
-  - [ePMP memory protection]()
-  - [Reading the boot log]()
-<!--* [How a chip trusts its own code](./secure-boot/index.md)
-  - [The boot chain: ROM to ROM_EXT to owner](./secure-boot/boot-chain.md)
-  - [Signature verification](./secure-boot/signature-verification.md)
+* [How a chip trusts its own code](./secure-boot/index.md)
+  - [The chain of trust](./secure-boot/boot-chain.md)
+  - [Signing and verifying an image](./secure-boot/signature-verification.md)
+  - [Building and running a signed chain](./secure-boot/lab.md)
   - [ePMP memory protection](./secure-boot/epmp.md)
-  - [Reading the boot log](./secure-boot/boot-log.md)-->
+  - [Reading the boot log](./secure-boot/boot-log.md)
 
 # Secure storage and lifecycle
 
