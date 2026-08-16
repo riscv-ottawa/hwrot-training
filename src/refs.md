@@ -9,10 +9,13 @@
 [pavona-getting-started]: https://docs.pavona.org/book/doc/getting_started/index.html
 [pavona-hw-gen]: https://docs.pavona.org/book/doc/getting_started/intro_hardware.html#the-top-generation-flow
 [pavona-logical-security]: https://docs.pavona.org/book/doc/security/logical_security_model/index.html
+[pavona-secure-boot]: https://docs.pavona.org/book/doc/security/specs/secure_boot/index.html
 [pavona-threat-model]: https://docs.pavona.org/book/doc/security/threat_model/index.html
 [podman]: https://podman.io/
 [riscvottawa]: https://riscvottawa.ca
 [rom-ctrl-theory]: https://docs.pavona.org/book/hw/ip/rom_ctrl/doc/theory_of_operation.html
+[mac]: https://en.wikipedia.org/wiki/Message_authentication_code
+[fsm]: https://en.wikipedia.org/wiki/Finite-state_machine
 [surfer]: https://surfer-project.org/
 [turtles]: https://en.wikipedia.org/wiki/Turtles_all_the_way_down
 [verilator]: https://www.veripool.org/verilator/
