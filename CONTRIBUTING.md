@@ -55,6 +55,19 @@ lives in the `src/references.md` page, and a matching `[label]: url` line in
 source, write the entry into `src/references.md` and append its `[label]: url`
 to `src/refs.md`.
 
+Lab files under `src/<part>/lab/` use the same include mechanism, but by anchor
+rather than whole-file, so text can annotate a file piece by piece. Mark each
+region in the source with `ANCHOR: <name>` and `ANCHOR_END: <name>` comments and
+pull them in one at a time:
+
+```
+{{#include ./lab/BUILD:manifest}}
+```
+
+Avoid including a whole anchored file. mdBook strips the markers from a
+slice but renders them literally in a whole-file include, so the `ANCHOR:`
+comments end up on the page.
+
 ## Writing style
 
 The book prose follows these rules, and so do commits, PRs, and reviews:
@@ -81,6 +94,12 @@ here or while driving the Pavona repo; book- and writing-related scripts go unde
 `scripts/book/` (e.g. `check_refdefs.py`). A chapter may reference one when the
 reader needs to run it, but short snippets can and should stay inline in the chapters themselves.
 `book/` is generated output, never hand-edited.
+
+When a part's lab asks you to add real source files to your Pavona checkout,
+those files are committed at `src/<part>/lab/` and the chapters include them
+rather than paraphrasing them, so what you read is what actually ran. They sit
+under `src/`, so mdbook copies them into `book/` and you can download them from
+the site instead of cloning this repo.
 
 ## Build and verify
 

@@ -13,6 +13,7 @@ default-theme = "Ayu"
 preferred-dark-theme = "Ayu"
 mathjax-support = true
 git-repository-url = "https://github.com/riscv-ottawa/hwrot-training"
+additional-css = ["theme/custom.css"]
 # no-section-label = true
 
 [build]
