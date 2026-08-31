@@ -44,10 +44,12 @@ attacker to [glitch][barel2006] past. This means that if you tried to run the im
 from somewhere it does not belong, the digest will simply come out different and the
 signature will fail.
 
-Anti-rollback works the same way. An image whose `security_version` is below the
-chip's minimum is not rejected outright. ROM poisons the hash input with
-`0xFFFFFFFF` so that the signature cannot verify, putting failure in the
-arithmetic itself rather than in a branch statement.
+Anti-rollback is different. A ROM_EXT image whose `security_version` is below the
+device's stored minimum is rejected before ROM hashes it or checks its signature.
+The all-ones value `0xFFFFFFFF` is an additional fault-injection defense: if
+execution continues past that rejection, ROM includes that word first in the hash
+input. That changes the verification input from what was signed, so signature
+verification should fail.
 
 ## Which key
 
@@ -79,11 +81,11 @@ As a result, the permission to run gets derived from the signature being right, 
 
 ## RTFM
 
-Everything above is mostly covered by five files in the Pavona tree, if you want to follow and learn more, check them out:
+Everything above is mostly covered by six files in the Pavona tree, if you want to follow and learn more, check them out:
 
 - Manifest layout and the hashed region: `sw/device/silicon_creator/lib/manifest.h`
 - Usage constraints read from hardware: `sw/device/silicon_creator/lib/sigverify/usage_constraints.c`
-- Hash ordering and the anti-rollback poisoning word: `rom_verify` in `sw/device/silicon_creator/rom/rom.c`
+- ROM_EXT anti-rollback policy and its fault-injection defense: `sw/device/silicon_creator/rom/boot_policy.c` and `rom_verify` in `sw/device/silicon_creator/rom/rom.c`
 - Key selection and the XOR check: `sw/device/silicon_creator/lib/sigverify/ecdsa_p256_verify.c`
 - The handoff to the coprocessor: `sw/device/silicon_creator/lib/acc_boot_services.c`
 
