@@ -127,8 +127,8 @@ the current stage. For ROM, that means computing
 Silicon Creator public key baked into ROM itself
 (see upstream `sw/device/silicon_creator/lib/manifest.h:203-235`).
 
-Note, Egret keeps two ROM_EXT slots, and ROM always verifies whichever one carries the higher `security_version`, which makes anti-rollback part of the choice of what to
-verify rather than a separate check  (`sw/device/silicon_creator/rom/boot_policy.c:25-27`).
+Note, Egret keeps two ROM_EXT slots, and ROM tries the candidate with the higher `security_version` first, breaking ties in favor of the higher major version and then the higher minor version (`sw/device/silicon_creator/rom/boot_policy.c:18-34`). That ordering only decides what to
+verify first; every attempted candidate must meet the device's stored minimum and pass verification.
 For simplicity this lab only ever populates slot A, so you will not see that fallback.
 
 <center>
@@ -193,8 +193,8 @@ problem is definitely better...but only if there is anyone around to hear it.
 A third option is to recover: keep a known-good image in memory the boot code alone can reach, and restore from it when a check fails (see [Dave et al.][dave2021]).
 
 Egret's different stages recover in different ways.
-A ROM_EXT that fails ROM's check ends in
-the ROM's own shutdown path, which reports an error code and stops outright.
+If the first ROM_EXT candidate fails verification, ROM tries the other slot.
+If boot still cannot continue, ROM follows its own shutdown path.
 Moving up, an owner image that fails ROM_EXT's check leads into a rescue protocol instead, ROM_EXT's route to being handed a replacement image rather than simply refusing to continue. We'll look at both of these cases in [reading the boot log](./boot-log.md).
 
 ## Watching it happen
