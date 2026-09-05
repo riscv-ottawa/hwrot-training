@@ -208,8 +208,8 @@ Most of the above findings were gleaned from four main files in the upstream Pav
 - ROM_EXT's own failure print and its support for rescue:
   `sw/device/silicon_creator/rom_ext/rom_ext.c`
 
-That wraps up Part 2. Egret verified a real signed boot chain across two hops, isolated
-each stage off with ePMP along the way, and refused two different tampered
+That wraps up Part 2. Egret verified a real signed boot chain across two hops, changed its
+ePMP configuration along the way, and refused two different tampered
 images (which we could trace back to specific lines of source code because Pavona is open source <3).
 Next we'll look at how secrets can be stored in Pavona and how different secrets relate to different
 points in the device's lifecycle.
