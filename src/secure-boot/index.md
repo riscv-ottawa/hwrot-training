@@ -37,8 +37,7 @@ The chapters for this part:
 - [Building and running a signed chain](./lab.md) is the hands-on lab,
   where we build and sign an owner image, assemble it into flash next
   to a signed ROM_EXT, and boot both hops using Verilator.
-- [ePMP memory protection](./epmp.md) is a hardware feature that covers what a valid signature does not, and is
-  what that stops each stage from touching memory it should not.
+- [ePMP memory protection](./epmp.md) is a hardware feature that covers what a valid signature does not: how the boot stages shape physical-memory access and how the machine-mode owner receives a configurable starting policy.
 - [Reading the boot log](./boot-log.md) closes the part by running the same
   boot with one bit flipped and looking at what happens when verification fails.
 

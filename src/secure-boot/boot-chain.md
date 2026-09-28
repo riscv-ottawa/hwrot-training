@@ -60,9 +60,12 @@ checked a signature over it. What "checked" means concretely is a hash (e.g., SH
 
 The second rule is about what happens *after* the check passes. Namely, booting should be one-way.
 Pavona's [logical security model][pavona-logical-security] states it in capital
-letters: from ROM through every software stage, execution is ONE WAY, and each
-stage completes its task and irreversibly jumps to the next. Once ROM has jumped, nothing later has any legitimate reason to read ROM's memory, so ROM can lock itself away on the way out and never need it back. This applies to later stages as well.
-Those thick black lines in the diagram above denote that closing-off, and on Egret this is achieved by something called (e)PMP, which [has its own chapter](./epmp.md). For now, just note that every arrow in the diagrams below is doing two things at once: verifying, and isolating.
+letters: from ROM through the kernel (or equivalent), execution is ONE WAY, and each
+stage completes its task and hands control to the next with no planned return. ROM and ROM_EXT also
+protect selected resources before handoff, using ePMP and other hardware controls.
+Those thick black lines in the diagram above denote protection boundaries, and ePMP
+[has its own chapter](./epmp.md). For now, just note that
+verification and protection are distinct steps, and that the exact protection changes at each handoff.
 
 ## Where the chain is anchored
 
