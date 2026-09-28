@@ -45,6 +45,7 @@ That matters here. At this handoff the owner starts in machine mode with Machine
 (`MML`) clear. `MPRV` is also clear, so loads and stores use machine-mode permissions. In that
 state, the R/W/X bits of a matching unlocked entry do not restrict the owner; they describe access
 for less-privileged code.
+With `MPRV=1`, loads and stores use `mstatus.MPP`; instruction fetches are unaffected.
 
 Let's take a look at some of the rows:
 
@@ -102,11 +103,12 @@ We'll go over three of the most interesting learning takeaways below.
 
 ### Next-stage code is not executable until it has been verified
 
-On start-up each next stage's code region remains readable so that the stage below it can check its
-signature, but it is not executable yet. ROM opens ROM_EXT's text read-execute after ROM's check
-passes. After verifying the owner, ROM_EXT installs its unlocked read-execute mapping before calling it.
+At hardware reset, flash has no matching PMP entry, so `MMWP` denies machine-mode access.
+Early ROM maps flash locked read-only to verify ROM_EXT. ROM opens ROM_EXT's text read-execute after
+ROM's check passes. After verifying the owner, ROM_EXT clears the PMP lock bits and installs its
+unlocked read-execute mapping before calling it.
 The stuff we covered in [signing and verifying an image](./signature-verification.md)
-exists exactly so that the system can verify before these ePMP writes are safe to make.
+exists exactly so that the system can verify before execution-enabling ePMP writes are safe to make.
 
 ### Some entries are inherited
 
@@ -118,13 +120,15 @@ Before ROM_EXT boots the owner image it clears entries 0 through 7 with a simple
 through 15 remain configured, and entries 2 and 3 are then reused for the owner's executable region.
 The handoff is therefore not a blank slate: some entries are reclaimed while others carry forward.
 
-### The lock bit matters
+### The L bit matters
 
 Next, note how ROM and ROM_EXT install locked executable mappings during creator boot, while RAM is
 locked read-write and not executable. Before owner handoff, however, ROM_EXT clears every PMP lock
 bit. Because the owner starts in machine mode with `MML` clear, the final unlocked R/W/X bits do not
 restrict its machine-mode accesses. At the PMP layer, they therefore do not stop the owner from
 writing executable memory or executing writable memory.
+With `MML=0`, `L=1` enforces R/W/X for accesses using machine-mode permissions; `RLB=1`
+permits rewriting locked PMP registers without bypassing those access checks.
 
 ### And more
 
@@ -151,12 +155,14 @@ signature, could therefore rewrite this PMP policy. `MMWP` denies a machine-mode
 entry matches, but it does not make a matching unlocked entry restrict machine mode while `MML` is
 clear.
 
+The owner could map boot ROM at `0x8000` in PMP, but [ROM has no write path][rom-ctrl-theory].
+
 Overall, the signature chain decides who gets to run next; ePMP applies the memory-access policy
 configured for that stage. These two mechanisms work together to improve the security guarantees of the overall system.
 
 ## RTFM
 
-All of the above can be found in roughly seven files from the Pavona repo:
+Relevant Pavona source files include:
 
 - The hardware reset map: `hw/top_egret/rtl/ibex_pmp_reset_pkg.sv`
 - ROM's initial setup, in assembly: `sw/device/silicon_creator/rom/rom_epmp_init.S`
@@ -165,6 +171,8 @@ All of the above can be found in roughly seven files from the Pavona repo:
 - The reclaim loop and the owner grant: `sw/device/silicon_creator/rom_ext/rom_ext.c`
 - The driver all of them call: `sw/device/silicon_creator/lib/drivers/epmp.c`
 - The in-memory shadow copy and its check: `sw/device/silicon_creator/lib/epmp_state.c`
+- Ibex's PMP access checks: `hw/vendor/lowrisc_ibex/rtl/ibex_pmp.sv`
+- Ibex's privilege selection and PMP register locks: `hw/vendor/lowrisc_ibex/rtl/ibex_cs_registers.sv`
 
 Next up we'll take a quick look at the serial boot log output and close off this part.
 
